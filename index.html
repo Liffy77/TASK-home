@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Layout</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #c70f2700; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 108vh;
+        }
+
+        .container {
+            display: grid;
+            grid-template-areas: 
+                "left center right"
+                "left center right";
+
+            gap: 10px;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        .left {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            grid-area: left;
+        }
+
+        .center {
+            grid-area: center;
+        }
+
+        .right {
+            display: grid;
+            grid-template-areas: 
+                "upper upper"
+                "center center"
+                "lower lower";
+            gap: 10px;
+            grid-area: right;
+        }
+
+        .right-upper {
+            grid-area: upper;
+            display: flex;
+            gap: 10px;
+        }
+
+        .right-center {
+            grid-area: center;
+        }
+
+        .right-lower {
+            grid-area: lower;
+            display: flex;
+            gap: 10px;
+        }
+
+        .image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+            background-color: white;
+        }
+
+        .left img {
+            height: 100px;
+        }
+
+        .center img {
+            height: 300px;
+        }
+
+        .right-upper img,
+        .right-lower img {
+            height: 100px;
+        }
+
+        .right-center img {
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <div class="left">
+            <img src="nature1.jpg" alt="Left Image 1" class="image">
+            <img src="nature2.jpg" alt="Left Image 2" class="image">
+        </div>
+
+        <div class="center">
+            <img src="nature9.jpg" alt="Main Image" class="image">
+        </div>
+
+        <div class="right">
+            <div class="right-upper">
+                <img src="nature4.jpg" alt="Right Upper Image 1" class="image">
+                <img src="nature5.jpg" alt="Right Upper Image 2" class="image">
+            </div>
+
+            <div class="right-center">
+                <img src="nature6.jpg" alt="Right Center Image" class="image">
+            </div>
+
+            <div class="right-lower">
+                <img src="nature7.jpg" alt="Right Lower Image 1" class="image">
+                <img src="nature8.jpg" alt="Right Lower Image 2" class="image">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
